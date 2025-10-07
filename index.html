@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Self-Marketing | Андрей Курицкий</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<body class="bg-neutral-50 text-neutral-900">
+  <main class="max-w-3xl mx-auto p-6 space-y-8">
+    <header class="text-center">
+      <h1 class="text-4xl font-bold">Self-Marketing</h1>
+      <p class="text-neutral-600 mt-2">Лендинг проекта. Демо-чат появится здесь.</p>
+    </header>
+
+    <section class="grid gap-4 md:grid-cols-3">
+      <div class="p-4 rounded-2xl bg-white shadow">Цель: показать навыки и подход.</div>
+      <div class="p-4 rounded-2xl bg-white shadow">Мой вклад: дизайн, код, ИИ.</div>
+      <div class="p-4 rounded-2xl bg-white shadow">Результат: интерактивная демо-сцена.</div>
+    </section>
+
+    <section class="p-4 rounded-2xl bg-white shadow">
+      <h2 class="text-2xl font-semibold mb-2">Демо-чат</h2>
+      <div id="log" class="h-48 overflow-auto border rounded p-3 text-sm mb-3"></div>
+      <div class="flex gap-2">
+        <input id="msg" class="flex-1 border rounded p-2" placeholder="Спроси о проекте...">
+        <button id="send" class="px-4 py-2 rounded bg-black text-white">Отправить</button>
+      </div>
+      <p id="notice" class="text-xs text-neutral-500 mt-2">Демо будет активировано позже.</p>
+      <script>
+        // Заглушка, чтобы не выглядело сломанным, пока ты не подключил бэкенд
+        document.getElementById('send').onclick = ()=>{
+          const m = document.getElementById('msg').value.trim();
+          if(!m) return;
+          const box = document.getElementById('log');
+          box.innerHTML += `<div><b>Вы:</b> ${m}</div><div><i>AI недоступен: демо ещё не подключено.</i></div>`;
+          document.getElementById('msg').value='';
+        };
+      </script>
+    </section>
+
+    <footer class="text-center text-xs text-neutral-500">© Андрей Курицкий</footer>
+  </main>
+</body>
+</html>
